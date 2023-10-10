@@ -25,8 +25,7 @@ class Handler implements URLHandler {
             if (url.getPath().contains("/search")) {
                 String[] parameters = url.getQuery().split("=");
                 if (parameters[0].equals("s")) {
-                    num += Integer.parseInt(parameters[1]);
-                    return String.format("Number increased by %s! It's now %d", parameters[1], num);
+                    return this.search(parameters[1]);
                 }
             }
             return "404 Not Found!";
